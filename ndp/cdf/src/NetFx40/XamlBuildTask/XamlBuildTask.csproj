@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
+    <Platform Condition="'$(Platform)' == ''">AnyCPU</Platform>
+    <ProjectGuid>{4a79fd70-bbab-499c-8b2d-634b180ad57a}</ProjectGuid>
+    <OutputPath>.</OutputPath>
+    <OutputType>Library</OutputType>
+    <AssemblyName>XamlBuildTask</AssemblyName>
+    <UseVSHostingProcess>False</UseVSHostingProcess>
+    <NoStdLib>True</NoStdLib>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <DefineConstants>CODE_ANALYSIS_BASELINE;NONAPTCA;TRACE;RETAIL;WIN32</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " >
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\clr\src\bcl\mscorlib.csproj">
+      <Project>{74ef8966-be63-49d5-84bc-6c2cb0724069}</Project>
+      <Name>mscorlib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\fx\src\System.csproj">
+      <Project>{df88a904-fb7a-40a0-8bc0-4e757ca35923}</Project>
+      <Name>System</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\fx\src\Core\System.Core.csproj">
+      <Project>{a7837c2f-d859-47c5-9575-cda85eb40aee}</Project>
+      <Name>System.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\fx\src\data\System.Data.csproj">
+      <Project>{d2315572-b0d2-417a-ab3b-42ec44092138}</Project>
+      <Name>System.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\fx\src\System.Drawing.csproj">
+      <Project>{8f0fc5b8-9479-461b-b086-05f16b8f04e8}</Project>
+      <Name>System.Drawing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\clr\src\managedlibraries\security\System.Security.csproj">
+      <Project>{e3e69a14-5289-49a3-beb3-1504d2c91c9d}</Project>
+      <Name>System.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\System.ServiceModel.Internals\System.ServiceModel.Internals.csproj">
+      <Project>{818221e0-c161-409c-9b1b-171c6ec54b27}</Project>
+      <Name>System.ServiceModel.Internals</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NetFx20\System.Web.Services\System.Web.Services.csproj">
+      <Project>{64b83cc4-5945-4d75-a033-3dbc31d68316}</Project>
+      <Name>System.Web.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\fx\src\Xml\System.Xml.csproj">
+      <Project>{44ffba6a-a240-4b9c-a1ef-f44bd42f8b8f}</Project>
+      <Name>System.Xml</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\fx\src\XLinq\System.Xml.Linq.csproj">
+      <Project>{0f0b0c1c-845b-4fee-b8f4-94796fe4dacb}</Project>
+      <Name>System.Xml.Linq</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Build.Engine" />
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.Build.Utilities.v4.0" />
+    <Reference Include="System.Xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Microsoft\Build\Tasks\Xaml\AttributeData.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\AttributeParameterData.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\BuildExtensionContext.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\ClassData.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\ClassGenerator.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\ClassImporter.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\ClassValidator.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\CodeDomExtensionMethods.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\CompilationPass2Task.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\CompilationPass2TaskInternal.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\DelegatingTaskItem.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\GenerateTemporaryAssemblyTask.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\IXamlBuildTypeGenerationExtension.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\IXamlBuildTypeInspectionExtension.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\LogData.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\LoggableException.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\MemberVisibility.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\NamedObject.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\NamespaceTable.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\PartialClassGenerationTask.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\PartialClassGenerationTaskInternal.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\PropertyData.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\ResolveAssemblyHelper.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\ValidationEventArgs.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\WrappingXamlSchemaContext.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\XamlBuildTaskLeaseLifetimeHelper.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\XamlBuildTaskServices.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\XamlBuildTypeGenerationExtensionContext.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\XamlBuildTypeInspectionExtensionContext.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\XamlStackWriter.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\XamlValidatingReader.cs" />
+    <Compile Include="Microsoft\Build\Tasks\Xaml\XamlWrappingReader.cs" />
+    <Compile Include="Microsoft\VisualStudio\Activities\VSDesignerPerfEventProvider.cs" />
+    <Compile Include="Microsoft\VisualStudio\Activities\VSDesignerPerfEvents.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
